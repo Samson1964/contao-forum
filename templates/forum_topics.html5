@@ -1,0 +1,27 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+	
+	<?php if($this->topics): ?>
+		<h2>Thema: <?= $this->threadname ?></h2>
+		<table class="topics">
+			<tr class="head">
+				<th class="text">Text</th>
+				<th class="topicdate">Erstellt am/von</th>
+			</tr>
+			<?php foreach($this->topics as $b): ?>
+				<tr class="<?= $b['class'] ?>">
+					<td class="text"><?= $b['text'] ?></td>
+					<td class="topicdate"><?= $b['topicdate'] ?><br><?= $b['name'] ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</table>
+	<?php endif; ?>		
+
+	<?php if($this->form): ?>
+		<h2>Antwort erstellen</h2>
+		<b>Angemeldet als <?= $this->username ?></b>
+		<div class="form">
+			<?= $this->form ?>
+		</div>
+	<?php endif; ?>		
+
+</div> 

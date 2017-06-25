@@ -1,0 +1,59 @@
+/* Threadansicht */
+table.threads
+{
+	width					: 100%;
+}
+
+.threads tr.head
+{
+ 	background-color   		: #C0C0C0; 
+ 	color 					: #000000; 
+}
+
+.threads tr.odd
+{
+ 	background-color   		: #DADADA; 
+}
+
+.threads th.title
+{
+	width					: 60%;
+	font-size				: 18px;
+}
+
+.threads th.initdate
+{
+	width					: 20%;
+}
+
+.threads th.actdate
+{
+	width					: 20%;
+}
+
+/* Topicansicht */
+table.topics
+{
+	width					: 100%;
+}
+
+.topics tr.head
+{
+ 	background-color   		: #C0C0C0; 
+ 	color 					: #000000; 
+}
+
+.topics tr.odd
+{
+ 	background-color   		: #DADADA; 
+}
+
+.topics th.text
+{
+	width					: 80%;
+}
+
+.topics th.topicdate
+{
+	width					: 20%;
+}

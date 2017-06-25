@@ -1,0 +1,48 @@
+/* Beschreibung des Links */
+.description
+{
+	color				: #b3b3b3;
+}
+
+.description p
+{
+	color				: #b3b3b3;
+	margin-bottom		: 0;
+}
+
+/* Prüfbericht */
+.tl_linkanalyse_head 
+{
+	background			: #B9B9B9 none repeat scroll 0 0;
+	padding				: 1px 0;
+}
+
+.tl_linkanalyse_top 
+{
+	background			: #D6D6D6 none repeat scroll 0 0;
+	border-bottom		: 1px solid #B9B9B9;
+	padding				: 1px 0;
+	font-weight  		: bold;
+}
+
+.tl_linkanalyse_row 
+{
+	background-color	: #ffffff;
+	border-bottom		: 1px solid #e9e9e9;
+	padding				: 1px 0;
+	background-image	: url(../images/favicon.png); 
+ 	background-repeat   : no-repeat; 
+ 	background-position : left top; 
+ 	background-size     : 18px; 
+}
+
+.tl_linkanalyse_row .tl_left
+{
+ 	padding-left		: 13px;
+ 	line-height			: 16px;
+}
+
+.webarchiv
+{
+	background-color	: #FFD5D5;
+}

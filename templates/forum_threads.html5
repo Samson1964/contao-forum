@@ -1,0 +1,30 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+	
+	<?= $this->category ?>
+	
+	<?php if($this->threads): ?>
+		<table class="threads">
+			<tr class="head">
+				<th class="title">Thema</th>
+				<th class="initdate">Erstellt am/von</th>
+				<th class="actdate">Aktualisiert</th>
+			</tr>
+			<?php foreach($this->threads as $b): ?>
+				<tr class="<?= $b['class'] ?>">
+					<td class="title"><a href="<?= $b['link'] ?>"><?= $b['title'] ?></a></td>
+					<td class="initdate"><?= $b['initdate'] ?><br><?= $b['name'] ?></td>
+					<td class="actdate"><?= $b['actdate'] ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</table>
+	<?php endif; ?>		
+
+	<?php if($this->form): ?>
+		<h2>Thema anlegen</h2>
+		<b>Angemeldet als <?= $this->username ?></b>
+		<div class="form">
+			<?= $this->form ?>
+		</div>
+	<?php endif; ?>		
+
+</div> 
