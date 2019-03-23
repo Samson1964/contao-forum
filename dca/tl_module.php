@@ -12,7 +12,7 @@
 /**
  * Add palette to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['forum'] = '{title_legend},name,type;{options_legend},forum_category;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['forum'] = '{title_legend},name,type;{options_legend},forum_category,forum_allpost;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['forum_category'] = array
 (
@@ -24,3 +24,13 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['forum_category'] = array
 	'sql'              => "int(10) unsigned NOT NULL default '0'",
 	'relation'         => array('type'=>'belongsTo', 'load'=>'lazy')
 ); 
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['forum_allpost'] = array
+(
+	'label'            => &$GLOBALS['TL_LANG']['tl_module']['forum_allpost'],
+	'exclude'          => true,
+	'filter'           => true,
+	'inputType'        => 'checkbox',
+	'eval'             => array('tl_class'=>'w50'),
+	'sql'              => "char(1) NOT NULL default ''"
+);

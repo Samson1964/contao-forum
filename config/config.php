@@ -27,6 +27,13 @@ $GLOBALS['FE_MOD']['forum'] = array
 );  
 
 // Standard-CSS einbinden
-if(TL_MODE == 'FE') $GLOBALS['TL_CSS'][] = 'system/modules/forum/assets/css/style.css'; 
+if(TL_MODE == 'FE') 
+{
+	$GLOBALS['TL_CSS'][] = 'system/modules/forum/assets/css/style.css'; 
+	$GLOBALS['TL_CSS'][] = 'system/modules/forum/assets/js/upload2.css'; 
+	$GLOBALS['TL_HEAD'][] = '<script src="system/modules/forum/assets/tinymce/tiny_mce.js"></script>';
+	$GLOBALS['TL_HEAD'][] = '<script src="system/modules/forum/assets/tinymce/tinymce_config.js"></script>'; 
+	$GLOBALS['TL_HEAD'][] = '<script src="system/modules/forum/assets/js/upload2.js"></script>'; 
+}
 if(TL_MODE == 'BE') $GLOBALS['TL_CSS'][] = 'system/modules/forum/assets/css/be.css'; 
  

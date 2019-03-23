@@ -1,27 +1,48 @@
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
 	
 	<?php if($this->topics): ?>
+		<div class="topics block">
 		<h2>Thema: <?= $this->threadname ?></h2>
 		<table class="topics">
 			<tr class="head">
-				<th class="text">Text</th>
 				<th class="topicdate">Erstellt am/von</th>
+				<th class="text">Text</th>
 			</tr>
 			<?php foreach($this->topics as $b): ?>
+				<tr>
+					<td colspan="2" class="abstand"></td>
+				</tr>
 				<tr class="<?= $b['class'] ?>">
-					<td class="text"><?= $b['text'] ?></td>
 					<td class="topicdate"><?= $b['topicdate'] ?><br><?= $b['name'] ?></td>
+					<td class="text"><?= $b['text'] ?></td>
 				</tr>
 			<?php endforeach; ?>
 		</table>
+		</div>
 	<?php endif; ?>		
 
 	<?php if($this->form): ?>
+		<div class="form block">
 		<h2>Antwort erstellen</h2>
 		<b>Angemeldet als <?= $this->username ?></b>
-		<div class="form">
 			<?= $this->form ?>
+			<div id="responses"></div>
 		</div>
+		<h2>Bild hochladen</h2>
+		<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+			<div id="selectImage">
+			<div id="image_preview"><img id="previewing" src="system/modules/forum/assets/images/noimage.png" /></div>
+			<label>Hier kannst Du ein Bild hochladen</label><br/>
+			<input type="file" name="file" id="file" required />
+			<input type="submit" value="Hochladen" class="submit" />
+			</div>
+		</form>
+		<h4 id='loading' >Lade..</h4>
+		<div id="message"></div>
+	<?php endif; ?>		
+
+	<?php if($this->debug): ?>
+		<?= $this->debug ?>
 	<?php endif; ?>		
 
 </div> 

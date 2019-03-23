@@ -22,6 +22,7 @@ $GLOBALS['TL_DCA']['tl_forum'] = array
 	(
 		'label'                       => $GLOBALS['TL_LANG']['tl_forum']['maintitle'],
 		'dataContainer'               => 'Table',
+        'switchToEdit'                => true,
 		'ctable'                      => array('tl_forum_threads'),
 		'enableVersioning'            => true,
 		'onload_callback'             => array
@@ -367,7 +368,7 @@ class tl_forum extends Backend
 		if ($varValue == '')
 		{
 			$autoAlias = true;
-			$varValue = standardize(String::restoreBasicEntities($dc->activeRecord->title));
+			$varValue = standardize(StringUtil::restoreBasicEntities($dc->activeRecord->title));
 		}
 
 		$objAlias = $this->Database->prepare("SELECT id FROM tl_forum WHERE id=? OR alias=?")

@@ -20,6 +20,7 @@ $GLOBALS['TL_DCA']['tl_forum_threads'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
+        'switchToEdit'                => true,
         'ptable'                      => 'tl_forum',
 		'ctable'                      => array('tl_forum_topics'),
 		'enableVersioning'            => true,
@@ -116,7 +117,7 @@ $GLOBALS['TL_DCA']['tl_forum_threads'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('protected'), 
-		'default'                     => '{title_legend},title,name,email;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{published_legend},published,start,stop'
+		'default'                     => '{title_legend},title,name,email;{actual_legend},actdate,actname;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{published_legend},published,start,stop'
 	), 
 
 	// Subpalettes
@@ -147,6 +148,16 @@ $GLOBALS['TL_DCA']['tl_forum_threads'] = array
     		'flag'					  => 5,
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
  		), 
+		// ID des Mitglieds mit der letzten Antwort
+		'actname' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_forum_threads']['actname'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'foreignKey'              => 'tl_member.username',
+			'eval'                    => array('mandatory'=>true, 'tl_class'=>'w50', 'choosen'=>true),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+		), 
         'title' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_forum_threads']['title'],

@@ -1,8 +1,24 @@
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
 	
-	<?= $this->category ?>
+	<h2><?= $this->categoryname ?></h2>
 	
+	<?php if($this->categories): ?>
+		<div class="categories block">
+		<table class="categories">
+			<?php foreach($this->categories as $b): ?>
+				<tr>
+					<td class="abstand"></td>
+				</tr>
+				<tr class="<?= $b['class'] ?>">
+					<td class="title"><a href="<?= $b['link'] ?>"><?= $b['title'] ?></a></td>
+				</tr>
+			<?php endforeach; ?>
+		</table>
+		</div>
+	<?php endif; ?>		
+
 	<?php if($this->threads): ?>
+		<div class="threads block">
 		<table class="threads">
 			<tr class="head">
 				<th class="title">Thema</th>
@@ -10,21 +26,40 @@
 				<th class="actdate">Aktualisiert</th>
 			</tr>
 			<?php foreach($this->threads as $b): ?>
+				<tr>
+					<td colspan="3" class="abstand"></td>
+				</tr>
 				<tr class="<?= $b['class'] ?>">
 					<td class="title"><a href="<?= $b['link'] ?>"><?= $b['title'] ?></a></td>
 					<td class="initdate"><?= $b['initdate'] ?><br><?= $b['name'] ?></td>
-					<td class="actdate"><?= $b['actdate'] ?></td>
+					<td class="actdate"><?= $b['actdate'] ?><br><?= $b['actname'] ?></td>
 				</tr>
 			<?php endforeach; ?>
 		</table>
+		</div>
 	<?php endif; ?>		
 
 	<?php if($this->form): ?>
+		<div class="form block">
 		<h2>Thema anlegen</h2>
 		<b>Angemeldet als <?= $this->username ?></b>
-		<div class="form">
 			<?= $this->form ?>
 		</div>
+		<h2>Bild hochladen</h2>
+		<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+			<div id="selectImage">
+			<div id="image_preview"><img id="previewing" src="system/modules/forum/assets/images/noimage.png" /></div>
+			<label>Hier kannst Du ein Bild hochladen</label><br/>
+			<input type="file" name="file" id="file" required />
+			<input type="submit" value="Hochladen" class="submit" />
+			</div>
+		</form>
+		<h4 id='loading' >Lade..</h4>
+		<div id="message"></div>
+	<?php endif; ?>		
+
+	<?php if($this->debug): ?>
+		<?= $this->debug ?>
 	<?php endif; ?>		
 
 </div> 

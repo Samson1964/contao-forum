@@ -1,3 +1,54 @@
+/* Forumansicht */
+.mod_forum a
+{
+	text-decoration			: none;
+}
+
+.mod_forum input[type=text]
+{
+	width					: 98%;
+	padding					: 5px;
+	border-radius			: 7px;
+}
+
+.mod_forum td
+{
+	vertical-align			: top;
+}
+
+.mod_forum td.abstand
+{
+	height					: 5px;
+}
+
+.mod_forum tr.odd
+{
+ 	background-color   		: #DADADA; 
+}
+
+.mod_forum tr.even
+{
+ 	background-color   		: #CECECE; 
+}
+
+
+/* Kategorieansicht */
+table.categories
+{
+	width					: 100%;
+}
+
+.categories td.title
+{
+	background-color   		: #C0C0C0; 
+	color 					: #000000; 
+	font-size				: 16px;
+	font-weight				: bold;
+	font-family				: Arial,Helvetica,sans-serif;
+	padding					: 5px;
+	border-radius			: 7px;
+}
+
 /* Threadansicht */
 table.threads
 {
@@ -10,15 +61,9 @@ table.threads
  	color 					: #000000; 
 }
 
-.threads tr.odd
-{
- 	background-color   		: #DADADA; 
-}
-
 .threads th.title
 {
 	width					: 60%;
-	font-size				: 18px;
 }
 
 .threads th.initdate
@@ -29,6 +74,12 @@ table.threads
 .threads th.actdate
 {
 	width					: 20%;
+}
+
+.threads td.title
+{
+	font-size				: 16px;
+	font-weight				: bold;
 }
 
 /* Topicansicht */
@@ -43,11 +94,6 @@ table.topics
  	color 					: #000000; 
 }
 
-.topics tr.odd
-{
- 	background-color   		: #DADADA; 
-}
-
 .topics th.text
 {
 	width					: 80%;
@@ -56,4 +102,16 @@ table.topics
 .topics th.topicdate
 {
 	width					: 20%;
+}
+
+.topics td.text
+{
+	font-size				: 14px;
+	color					: #27004F;
+}
+
+/* Formularansicht */
+.mod_forum div.form
+{
+	margin					: 20px 0px 20px 0px;
 }

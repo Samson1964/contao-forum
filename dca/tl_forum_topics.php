@@ -20,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_forum_topics'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
-        'ptable'                      => 'tl_forum_topics',
+        'ptable'                      => 'tl_forum_threads',
 		'enableVersioning'            => true,
         'sql' => array
         (
@@ -60,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_forum_topics'] = array
         ),
         'operations' => array
         (
-			'editheader' => array
+			'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_forum_topics']['editheader'],
 				'href'                => 'act=edit',
@@ -105,7 +105,7 @@ $GLOBALS['TL_DCA']['tl_forum_topics'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('protected'), 
-		'default'                     => '{title_legend},title,name,email;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{published_legend},published,start,stop'
+		'default'                     => '{title_legend},title,name,email;{text_legend},text;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{published_legend},published,start,stop'
 	), 
 
 	// Subpalettes
@@ -144,7 +144,7 @@ $GLOBALS['TL_DCA']['tl_forum_topics'] = array
             'sorting'                 => true,
             'flag'                    => 1,
             'inputType'               => 'text',
-            'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'long'),
+            'eval'                    => array('mandatory'=>false, 'maxlength'=>128, 'tl_class'=>'long'),
             'sql'                     => "varchar(128) NOT NULL default ''"
         ),
   		'text' => array

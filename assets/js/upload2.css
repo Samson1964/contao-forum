@@ -1,0 +1,73 @@
+#image_preview{
+font-size: 30px;
+width: 250px;
+height: 230px;
+text-align: center;
+line-height: 180px;
+font-weight: bold;
+color: #C0C0C0;
+background-color: #FFFFFF;
+overflow: auto;
+}
+#selectImage{
+padding: 19px 21px 14px 15px;
+margin-top: 20px;
+bottom: 0px;
+width: 295px;
+border-radius: 10px;
+}
+#main .submit{
+font-size: 16px;
+background: linear-gradient(#FFAEFF 5%, #FF6AFF 100%);
+border: 1px solid #e5a900;
+color: #4E4D4B;
+font-weight: bold;
+cursor: pointer;
+width: 300px;
+border-radius: 5px;
+padding: 5px 0;
+outline: none;
+margin-top: 20px;
+margin-left: 0px;
+}
+#main .submit:hover{
+background: linear-gradient(#FF6AFF 5%, #FFAEFF 100%);
+}
+#file {
+color: red;
+padding: 5px;
+border: 1px solid #FF77FF;
+background-color: #FFAEFF;
+margin-top: 10px;
+border-radius: 5px;
+box-shadow: 0 0 15px #626F7E;
+margin-left: 0;
+width: 288px;
+}
+#message{
+}
+#success
+{
+color:green;
+}
+#invalid
+{
+color:red;
+}
+#line
+{
+margin-top: 274px;
+}
+#error
+{
+color:red;
+}
+#error_message
+{
+color:blue;
+}
+#loading
+{
+display:none;
+font-size:25px;
+}
